@@ -1175,6 +1175,8 @@ void RuntimeTest::manualInitInputPort()
   }
 }
 
+#include <stdlib.h>
+
 void RuntimeTest::manualExecuteNoThread()
 {
   DEBTRACE(" --- execution Python Node_10" );

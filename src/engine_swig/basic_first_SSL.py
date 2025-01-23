@@ -24,9 +24,9 @@ import SALOMERuntime
 import loader
 import os
 import datetime
-import salome
+from salome.kernel import salome
 import tempfile
-import NamingService
+from salome.kernel import NamingService
 
 class TestBasicFirstSSL(unittest.TestCase):
     def test0(self):

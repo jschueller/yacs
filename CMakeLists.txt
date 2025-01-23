@@ -132,7 +132,6 @@ ENDIF()
 ##
 ## From KERNEL:
 ##
-
 # Mandatory products
 FIND_PACKAGE(SalomePythonInterp REQUIRED)
 FIND_PACKAGE(SalomePythonLibs REQUIRED)
@@ -173,7 +172,6 @@ IF(SALOME_BUILD_GUI)
   # Qt
   FIND_PACKAGE(SalomeQt5 REQUIRED)
 ENDIF(SALOME_BUILD_GUI)
-
 ##
 ## YACS specifics
 ##
@@ -206,7 +204,9 @@ IF( SALOME_YACS_USE_KERNEL )
     "Install path: SALOME script data")
   SET(SALOME_INSTALL_SCRIPT_PYTHON "${SALOME_INSTALL_SCRIPT_PYTHON}" CACHE PATH 
     "Install path: SALOME Python scripts")
-  SET(SALOME_INSTALL_PYTHON "${SALOME_INSTALL_PYTHON}" CACHE PATH "Install path: SALOME Python stuff")
+  SET(_pydir lib/python${PYTHON_VERSION_MAJOR}.${PYTHON_VERSION_MINOR}/site-packages)
+  SET(SALOME_YACS_INSTALL_PYTHON ${_pydir}/salome CACHE PATH "Install path: SALOME Python stuff")
+  SET(SALOME_YACS_INSTALL_PYTHON "${SALOME_YACS_INSTALL_PYTHON}" CACHE PATH "Install path: SALOME Python stuff")
   SET(SALOME_INSTALL_PYTHON_SHARED "${SALOME_INSTALL_PYTHON_SHARED}" CACHE PATH 
     "Install path: SALOME Python shared modules")
   SET(SALOME_INSTALL_CMAKE_LOCAL adm/cmake CACHE PATH 
@@ -234,8 +234,8 @@ ELSE(SALOME_YACS_USE_KERNEL)
     "Install path: local SALOME config files (obsolete, to be removed)")
 
   SET(_pydir lib/python${PYTHON_VERSION_MAJOR}.${PYTHON_VERSION_MINOR}/site-packages)
-  SET(SALOME_INSTALL_PYTHON ${_pydir}/salome CACHE PATH "Install path: SALOME Python stuff")
-  SET(SALOME_INSTALL_PYTHON_SHARED ${SALOME_INSTALL_PYTHON}/shared_modules CACHE PATH 
+  SET(SALOME_YACS_INSTALL_PYTHON ${_pydir}/salome CACHE PATH "Install path: SALOME Python stuff")
+  SET(SALOME_INSTALL_PYTHON_SHARED ${SALOME_YACS_INSTALL_PYTHON}/shared_modules CACHE PATH 
     "Install path: SALOME Python shared modules")
 
   SET(SALOME_INSTALL_RES share/salome/resources CACHE PATH "Install path: SALOME resources")
@@ -267,7 +267,7 @@ MARK_AS_ADVANCED(
 
 # Accumulate environment variables for YACS module
 SALOME_ACCUMULATE_ENVIRONMENT(PYTHONPATH NOCHECK ${CMAKE_INSTALL_PREFIX}/${SALOME_INSTALL_BINS}
-                                                 ${CMAKE_INSTALL_PREFIX}/${SALOME_INSTALL_PYTHON})
+                                                 ${CMAKE_INSTALL_PREFIX}/${SALOME_YACS_INSTALL_PYTHON})
 SALOME_ACCUMULATE_ENVIRONMENT(LD_LIBRARY_PATH NOCHECK ${CMAKE_INSTALL_PREFIX}/${SALOME_INSTALL_LIBS}) 
 
 # Sources 
