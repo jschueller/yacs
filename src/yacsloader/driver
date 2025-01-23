@@ -21,10 +21,10 @@
 
 import driver_internal
 import subprocess as sp
-import salome
-import SALOME_Embedded_NamingService_ClientPy
-import NamingService
-from SALOME_PyNode import FileDeleter,FileHolder
+from salome.kernel import salome
+from salome.kernel import SALOME_Embedded_NamingService_ClientPy
+from salome.kernel import NamingService
+from salome.kernel.SALOME_PyNode import FileDeleter,FileHolder
 
 import signal
 import os

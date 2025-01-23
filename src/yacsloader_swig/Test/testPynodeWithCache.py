@@ -26,7 +26,7 @@ import loader
 import unittest
 import tempfile
 import os
-from SALOME_PyNode import UnProxyObjectSimple
+from salome.kernel.SALOME_PyNode import UnProxyObjectSimple
 
 dir_test = tempfile.mkdtemp(suffix=".yacstest")
 

@@ -292,14 +292,14 @@ def executeGraph( executor, xmlfilename, proc, dump, finalDump, display, shutdow
       self._dump_thread.join()
   
   def MonitoringDirectories( DirectoriesToMonitor ):
-    import SALOME_PyNode
+    from salome.kernel import SALOME_PyNode
     if len( DirectoriesToMonitor ) > 0:
       return [ SALOME_PyNode.GenericPythonMonitoringLauncherCtxMgr( SALOME_PyNode.FileSystemMonitoring(timeRes*1000,zeDir,zeDirRes) ) for zeDir,zeDirRes,timeRes in DirectoriesToMonitor ]
     else:
       return [ ]
 
   def MonitoringThisProcess(HTopOfThisProcessFile,HTopTimeRes):
-    import SALOME_PyNode
+    from salome.kernel import SALOME_PyNode
     if HTopOfThisProcessFile:
       return [ SALOME_PyNode.GenericPythonMonitoringLauncherCtxMgr( SALOME_PyNode.CPUMemoryMonitoring(1000*HTopTimeRes,HTopOfThisProcessFile) ) ]
     else:
@@ -400,7 +400,7 @@ def mainRun( args, xmlFileName):
 
   """
   global my_ior_ns,my_replay_on_error,my_replay_dir
-  from salome_utils import positionVerbosityOfLoggerRegardingState,setVerboseLevel,setVerbose,KernelLogLevelToLogging
+  from salome.kernel.salome_utils import positionVerbosityOfLoggerRegardingState,setVerboseLevel,setVerbose,KernelLogLevelToLogging
   #
   iorNS = args[IORKeyInARGS]
   #
@@ -432,7 +432,7 @@ def mainRun( args, xmlFileName):
   if args[ CustomOverridesInARGS ]:
     try:
       import yacs_driver_overrides
-      import pylauncher
+      from salome.kernel import pylauncher
       allresources = pylauncher.RetrieveRMCppSingleton()# pylauncher.ResourcesManager_cpp singleton representing all resources (pylauncher.ResourceDefinition_cpp) devoted for the computation.
       yacs_driver_overrides.customize( salome.cm, allresources )
     except:

@@ -65,7 +65,7 @@ class TestDeco(unittest.TestCase):
       f1 -> f3 -> f1
       """
       import testforeach
-      from SALOME_PyNode import UnProxyObjectSimple
+      from salome.kernel.SALOME_PyNode import UnProxyObjectSimple
       expected_1, expected_2 = testforeach.main()
       yacs_schema_file = os.path.join(dir_test, "schema_t1.xml")
       yacs_build_command = "yacsbuild.py"
@@ -87,7 +87,7 @@ class TestDeco(unittest.TestCase):
       Foreach initialized by value.
       """
       import testforeach
-      from SALOME_PyNode import UnProxyObjectSimple
+      from salome.kernel.SALOME_PyNode import UnProxyObjectSimple
       expected_1, expected_2 = testforeach.mainblock()
       yacs_schema_file = os.path.join(dir_test, "schema_t2.xml")
       yacs_build_command = "yacsbuild.py"
@@ -109,7 +109,7 @@ class TestDeco(unittest.TestCase):
       Foreach on 2 levels.
       """
       import testforeach
-      from SALOME_PyNode import UnProxyObjectSimple
+      from salome.kernel.SALOME_PyNode import UnProxyObjectSimple
       expected = testforeach.maindoublefr()
       yacs_schema_file = os.path.join(dir_test, "schema_t3.xml")
       yacs_build_command = "yacsbuild.py"

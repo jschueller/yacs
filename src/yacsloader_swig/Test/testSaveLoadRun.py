@@ -1253,7 +1253,7 @@ for i in i8:
     pass
 
   def test15(self):
-    from SALOME_PyNode import UnProxyObjectSimple
+    from salome.kernel.SALOME_PyNode import UnProxyObjectSimple
     #fname=os.path.join(self.workdir, "BugInConcurrentLaunchDftCont.xml")
     p=self.r.createProc("pr")
     ti=p.createType("int","int")
