@@ -26,6 +26,7 @@ import unittest
 import tempfile
 import os
 from salome.kernel import salome
+from salome.kernel.LifeCycleCORBA import ResourceParameters
 
 NB_NODE=15
 class TestEdit(unittest.TestCase):
@@ -44,7 +45,7 @@ class TestEdit(unittest.TestCase):
         resource_definition.nb_node = NB_NODE
         resource_definition.nb_proc_per_node = 1
         resourceManager.AddResource(resource_definition, False, "")
-        resource_required = salome.ResourceParameters()
+        resource_required = ResourceParameters()
         resource_required.can_run_containers = True
         res_list = resourceManager.GetFittingResources(resource_required)
         for r in res_list:

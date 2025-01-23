@@ -27,6 +27,7 @@ import SALOMERuntime
 import loader
 import pilot
 from salome.kernel import salome
+from salome.kernel.LifeCycleCORBA import ResourceParameters
 
 dir_test = tempfile.mkdtemp(suffix=".yacstest")
 
@@ -43,7 +44,7 @@ class TestDeco(unittest.TestCase):
       resource_definition = resourceManager.GetResourceDefinition("localhost")
       resource_definition.nb_node = NB_NODE
       resourceManager.AddResource(resource_definition, False, "")
-      resource_required = salome.ResourceParameters()
+      resource_required = ResourceParameters()
       resource_required.can_run_containers = True
       res_list = resourceManager.GetFittingResources(resource_required)
       for r in res_list:
