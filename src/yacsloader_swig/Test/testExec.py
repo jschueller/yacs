@@ -185,8 +185,8 @@ class TestExec(unittest.TestCase):
     pass
 
 if __name__ == '__main__':
-  import salome
-  import NamingService
+  from salome.kernel import salome
+  from salome.kernel import NamingService
   import os
   import subprocess
   salome.salome_init()

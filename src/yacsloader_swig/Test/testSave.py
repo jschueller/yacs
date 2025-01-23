@@ -100,7 +100,7 @@ class TestSave(unittest.TestCase):
             pass
 
 if __name__ == '__main__':
-  import salome
+  from salome.kernel import salome
   import NamingService
   import os
   import subprocess

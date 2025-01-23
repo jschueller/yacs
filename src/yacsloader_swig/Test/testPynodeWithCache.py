@@ -21,7 +21,7 @@
 import sys
 import pilot
 import SALOMERuntime
-import salome
+from salome.kernel import salome
 import loader
 import unittest
 import tempfile

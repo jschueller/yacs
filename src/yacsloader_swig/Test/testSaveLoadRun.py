@@ -25,7 +25,7 @@ import os
 import pilot
 import SALOMERuntime
 import loader
-import salome
+from salome.kernel import salome
 
 import datetime
 
@@ -1706,7 +1706,7 @@ o2=2*i1
     n0=r.createScriptNode("","n0")
     n0.setScript("""import SalomeSDSClt
 import SALOME
-import salome
+from salome.kernel import salome
 import unittest
 import pickle
 import gc
@@ -1738,7 +1738,7 @@ dss.atomicApply([t0])
     n1_vn=n1.edAddInputPort("varName",ts)
     n1.setScript("""import SalomeSDSClt
 import SALOME
-import salome
+from salome.kernel import salome
 import unittest
 import pickle
 import gc
@@ -1768,7 +1768,7 @@ assert(str2Obj(dss.waitForMonoThrRev(wk2))==[11,12])""")
     n2_vn=n2.edAddInputPort("varName",ts)
     n2.setScript("""import SalomeSDSClt
 import SALOME
-import salome
+from salome.kernel import salome
 import unittest
 import pickle
 import gc

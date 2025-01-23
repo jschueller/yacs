@@ -26,7 +26,7 @@ import subprocess
 import SALOMERuntime
 import loader
 import pilot
-import salome
+from salome.kernel import salome
 
 dir_test = tempfile.mkdtemp(suffix=".yacstest")
 

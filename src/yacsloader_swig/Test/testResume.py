@@ -27,7 +27,7 @@ import os
 import SALOMERuntime
 import loader
 import pilot
-import salome
+from salome.kernel import salome
 
 class TestResume(unittest.TestCase):
 

@@ -29,7 +29,7 @@ import loader
 import unittest
 import tempfile
 import os
-import salome
+from salome.kernel import salome
 
 NB_NODE=15
 class TestEdit(unittest.TestCase):

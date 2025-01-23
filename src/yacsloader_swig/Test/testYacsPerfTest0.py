@@ -25,7 +25,7 @@ import os
 import pilot
 import SALOMERuntime
 import loader
-import salome
+from salome.kernel import salome
 
 class TestYacsPerf0(unittest.TestCase):
     def test0(self):
@@ -107,7 +107,7 @@ ret = 3*ppp
         [EDF28562] : test of exclusion output port of squeezeMemory mecanism
         """
         salome.salome_init()
-        import KernelBasis
+        from salome.kernel import KernelBasis
         KernelBasis.SetVerbosityActivated(False)
         SALOMERuntime.RuntimeSALOME.setRuntime()
         r=SALOMERuntime.getSALOMERuntime()

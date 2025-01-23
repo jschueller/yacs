@@ -18,7 +18,7 @@
 # See http://www.salome-platform.org/ or email : webmaster.salome@opencascade.com
 #
 
-import salome
+from salome.kernel import salome
 import logging
 
 DisplayEntryInCMD = "--display"
@@ -118,7 +118,7 @@ my_replay_dir = ""
 
 def initializeSALOME():
   import SALOMERuntime
-  import KernelBasis
+  from salome.kernel import KernelBasis
   global my_runtime_yacs,my_ior_ns,my_runtime_yacs
   if my_runtime_yacs:
     return
@@ -356,7 +356,7 @@ def reprAfterArgParsing( args ):
   return "\n".join( [ f"{EntryFromCoarseEntry(entry)} : {args[key]}" for entry,key in KeyValnARGS ] )
 
 def getArgumentParser():
-  import KernelBasis
+  from salome.kernel import KernelBasis
   import argparse
   parser = argparse.ArgumentParser()
   parser.add_argument('xmlfilename',help = "XML file containing YACS schema to be executed")

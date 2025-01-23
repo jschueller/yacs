@@ -19,7 +19,7 @@
 
 import time
 
-import salome
+from salome.kernel import salome
 salome.salome_init()
 
 import YACS_ORB
