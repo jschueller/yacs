@@ -153,17 +153,21 @@ SET(ExampleOfObserversPluginForDriver_SOURCES
 
 ADD_LIBRARY(YACSloader ${YACSloader_SOURCES})
 TARGET_LINK_LIBRARIES(YACSloader ${YACSloader_LIBRARIES})
+set_target_properties(YACSloader PROPERTIES INSTALL_RPATH "$ORIGIN")
 INSTALL(TARGETS YACSloader EXPORT ${PROJECT_NAME}TargetGroup DESTINATION ${SALOME_INSTALL_LIBS})
 
 ADD_LIBRARY(ExampleOfObserversPluginForDriver ${ExampleOfObserversPluginForDriver_SOURCES})
 TARGET_LINK_LIBRARIES(ExampleOfObserversPluginForDriver ${_link_LIBRARIES})
+set_target_properties(ExampleOfObserversPluginForDriver PROPERTIES INSTALL_RPATH "$ORIGIN")
 INSTALL(TARGETS ExampleOfObserversPluginForDriver DESTINATION ${SALOME_INSTALL_LIBS})
 
 ADD_EXECUTABLE(resume ${resume_SOURCES})
 TARGET_LINK_LIBRARIES(resume ${_link_LIBRARIES})
+set_target_properties(resume PROPERTIES INSTALL_RPATH "$ORIGIN/../../lib/salome")
 
 ADD_EXECUTABLE(debugger ${debugger_SOURCES})
 TARGET_LINK_LIBRARIES(debugger ${_link_LIBRARIES})
+set_target_properties(debugger PROPERTIES INSTALL_RPATH "$ORIGIN/../../lib/salome")
 
 SET_TARGET_PROPERTIES(resume debugger PROPERTIES COMPILE_FLAGS ${_exec_DEFINITIONS})
 

@@ -36,6 +36,9 @@ ELSE()
   MESSAGE(FATAL_ERROR "We absolutely need the Salome CMake configuration files, please define CONFIGURATION_ROOT_DIR !")
 ENDIF()
 
+# This file sets global RPATH rules for all the targets and must be include before they are defined.
+INCLUDE(${CONFIGURATION_ROOT_DIR}/cmake/ConfigureRPath.cmake)
+
 # Versioning
 # ===========
 SALOME_SETUP_VERSION(9.13.0)
@@ -205,7 +208,7 @@ IF( SALOME_YACS_USE_KERNEL )
   SET(SALOME_INSTALL_SCRIPT_PYTHON "${SALOME_INSTALL_SCRIPT_PYTHON}" CACHE PATH 
     "Install path: SALOME Python scripts")
   SET(_pydir lib/python${PYTHON_VERSION_MAJOR}.${PYTHON_VERSION_MINOR}/site-packages)
-  SET(SALOME_YACS_INSTALL_PYTHON ${_pydir}/salome CACHE PATH "Install path: SALOME Python stuff")
+  SET(SALOME_YACS_INSTALL_PYTHON ${_pydir}/salome/yacs CACHE PATH "Install path: SALOME Python stuff")
   SET(SALOME_YACS_INSTALL_PYTHON "${SALOME_YACS_INSTALL_PYTHON}" CACHE PATH "Install path: SALOME Python stuff")
   SET(SALOME_INSTALL_PYTHON_SHARED "${SALOME_INSTALL_PYTHON_SHARED}" CACHE PATH 
     "Install path: SALOME Python shared modules")
@@ -367,3 +370,5 @@ INSTALL(FILES
 # Install the export set for use with the install-tree
 INSTALL(EXPORT ${PROJECT_NAME}TargetGroup DESTINATION "${SALOME_INSTALL_CMAKE_LOCAL}" 
         FILE ${PROJECT_NAME}Targets.cmake)
+
+add_subdirectory( postinstall )

@@ -51,6 +51,7 @@ SET(_py2yacs_headers
 
 ADD_LIBRARY(py2yacslib ${_py2yacs_sources})
 TARGET_LINK_LIBRARIES(py2yacslib ${_link_LIBRARIES})
+set_target_properties(py2yacslib PROPERTIES INSTALL_RPATH "$ORIGIN")
 
 INSTALL(TARGETS py2yacslib EXPORT ${PROJECT_NAME}TargetGroup DESTINATION ${SALOME_INSTALL_LIBS})
 INSTALL(FILES ${_py2yacs_headers} DESTINATION ${SALOME_INSTALL_HEADERS})

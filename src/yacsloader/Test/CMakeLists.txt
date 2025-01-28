@@ -94,6 +94,7 @@ SET(TestOptLoop_SOURCES
 SET(LOCAL_TEST_DIR ${SALOME_YACS_INSTALL_TEST}/yacsloader)
 
 OMNIORB_ADD_MODULE(yacsloader_echo "${echo_IDL_FILES}" "${IDL_INCLUDE_DIRS}" "${IDL_LINK_FLAGS}")
+set_target_properties(yacsloader_echo PROPERTIES INSTALL_RPATH "$ORIGIN")
 INSTALL(TARGETS yacsloader_echo DESTINATION ${SALOME_INSTALL_LIBS})
 
 ADD_EXECUTABLE(TestYacsLoader ${TestYacsLoader_SOURCES})
