@@ -25,6 +25,7 @@ SET(_link_LIBRARIES
 
 ADD_EXECUTABLE(WorkloadManagerTest TestMain.cxx)
 TARGET_LINK_LIBRARIES(WorkloadManagerTest ${_link_LIBRARIES})
+set_target_properties(WorkloadManagerTest PROPERTIES INSTALL_RPATH "$ORIGIN/../../../../../lib/salome")
 ADD_TEST(WorkloadManager WorkloadManagerTest)
 
 # For salome test

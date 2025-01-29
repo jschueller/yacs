@@ -23,8 +23,6 @@ SET(PYTHON_TEST_DRIVER "$ENV{KERNEL_ROOT_DIR}/bin/salome/appli/python_test_drive
 SET(COMPONENT_NAME YACS)
 SET(TIMEOUT        500)
 
-SET(YACS_TEST_LIB "../lib")
-
 # Add all test subdirs
 SUBDIRS(
     bases
