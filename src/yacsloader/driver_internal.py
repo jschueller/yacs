@@ -117,7 +117,7 @@ my_replay_on_error = False
 my_replay_dir = ""
 
 def initializeSALOME():
-  import SALOMERuntime
+  from salome.yacs import SALOMERuntime
   from salome.kernel import KernelBasis
   global my_runtime_yacs,my_ior_ns,my_runtime_yacs
   if my_runtime_yacs:
@@ -153,7 +153,7 @@ def loadGraph( xmlFileName ):
 
   SALOMERuntime.SalomeProc : YACS graph instance
   """
-  import loader
+  from salome.yacs import loader
   l=loader.YACSLoader()
   p=l.load( xmlFileName )
   return p
@@ -171,9 +171,9 @@ def patchGraph( proc, squeezeMemory, initPorts, xmlSchema, loadStateXmlFile, res
   reset (int) : 
   display (int) :
   """
-  import SALOMERuntime
-  import loader
-  import pilot
+  from salome.yacs import SALOMERuntime
+  from salome.yacs import loader
+  from salome.yacs import pilot
   def parse_init_port(input):
     """
     Returns
@@ -225,7 +225,7 @@ def prepareExecution(proc, isStop, dumpErrorFile):
 
   pilot.ExecutorSwig : Instance of executor
   """
-  import pilot
+  from salome.yacs import pilot
   ex=pilot.ExecutorSwig()
   if isStop:
     logging.info(f"Stop has been activated with {dumpErrorFile}")
@@ -253,8 +253,8 @@ def executeGraph( executor, xmlfilename, proc, dump, finalDump, display, shutdow
   HTopOfAllServersFile (str) : file name (if not empty) containing the result of measure of all servers
   HTopOfAllServersTimeRes (int) : time in second between two measures of CPU/Mem of any of server
   """
-  import SALOMERuntime
-  import pilot
+  from salome.yacs import SALOMERuntime
+  from salome.yacs import pilot
   import os
   import contextlib
 
