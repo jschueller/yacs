@@ -18,8 +18,8 @@
 #
 
 import sys
-import YACS_ORB__POA
-import YACS_ORB
+from salome.yacs import YACS_ORB__POA
+from salome.yacs import YACS_ORB
 import SALOME_ComponentPy
 import SALOME_DriverPy
 

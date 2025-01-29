@@ -237,7 +237,7 @@ ELSE(SALOME_YACS_USE_KERNEL)
     "Install path: local SALOME config files (obsolete, to be removed)")
 
   SET(_pydir lib/python${PYTHON_VERSION_MAJOR}.${PYTHON_VERSION_MINOR}/site-packages)
-  SET(SALOME_YACS_INSTALL_PYTHON ${_pydir}/salome CACHE PATH "Install path: SALOME Python stuff")
+  SET(SALOME_YACS_INSTALL_PYTHON ${_pydir}/salome/yacs CACHE PATH "Install path: SALOME Python stuff")
   SET(SALOME_INSTALL_PYTHON_SHARED ${SALOME_YACS_INSTALL_PYTHON}/shared_modules CACHE PATH 
     "Install path: SALOME Python shared modules")
 
@@ -267,6 +267,8 @@ MARK_AS_ADVANCED(
   SALOME_INSTALL_HXX2SALOME
   SALOME_YACS_INSTALL_TEST
   )
+
+SET (INSTALL_PYIDL_DIR ${SALOME_YACS_INSTALL_PYTHON} CACHE PATH "Install path: SALOME Python IDL")
 
 # Accumulate environment variables for YACS module
 SALOME_ACCUMULATE_ENVIRONMENT(PYTHONPATH NOCHECK ${CMAKE_INSTALL_PREFIX}/${SALOME_INSTALL_BINS}
