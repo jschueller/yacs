@@ -29,7 +29,7 @@ from . import Items
 from . import adapt
 from . import Item
 from . import logview
-import pilot
+from salome.yacs import pilot
 import threading
 import time
 from . import CONNECTOR

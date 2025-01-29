@@ -117,10 +117,11 @@ endif(WIN32)
 ADD_LIBRARY(TestComponentLocal ${TestComponentLocal_SOURCES})
 TARGET_LINK_LIBRARIES(TestComponentLocal YACSlibEngine)
 
+
 # For salome test
 SET(LOCAL_TEST_DIR ${SALOME_YACS_INSTALL_TEST}/runtime)
 INSTALL(TARGETS TestComponentLocal EXPORT ${PROJECT_NAME}TargetGroup
-        DESTINATION ${LOCAL_TEST_DIR}/lib/salome)
+        DESTINATION ${SALOME_YACS_INSTALL_TEST_LIB})
 
 SALOME_GENERATE_TESTS_ENVIRONMENT(tests_env)
 

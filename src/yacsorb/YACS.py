@@ -27,10 +27,10 @@ import threading
 import tempfile
 import os
 
-import SALOMERuntime
-import loader
+from salome.yacs import SALOMERuntime
+from salome.yacs import loader
 import salomeloader
-import pilot
+from salome.yacs import pilot
 import traceback
 
 class proc_i(YACS_ORB__POA.ProcExec):

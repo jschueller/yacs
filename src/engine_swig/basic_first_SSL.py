@@ -19,9 +19,9 @@
 #
 
 import unittest
-import pilot
-import SALOMERuntime
-import loader
+from salome.yacs import pilot
+from salome.yacs import SALOMERuntime
+from salome.yacs import loader
 import os
 import datetime
 from salome.kernel import salome

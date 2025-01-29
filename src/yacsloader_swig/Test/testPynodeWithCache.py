@@ -19,10 +19,10 @@
 #
 
 import sys
-import pilot
-import SALOMERuntime
+from salome.yacs import pilot
+from salome.yacs import SALOMERuntime
 from salome.kernel import salome
-import loader
+from salome.yacs import loader
 import unittest
 import tempfile
 import os

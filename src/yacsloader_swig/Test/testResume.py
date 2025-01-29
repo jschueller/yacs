@@ -24,9 +24,9 @@ import threading
 import tempfile
 import os
 
-import SALOMERuntime
-import loader
-import pilot
+from salome.yacs import SALOMERuntime
+from salome.yacs import loader
+from salome.yacs import pilot
 from salome.kernel import salome
 
 class TestResume(unittest.TestCase):

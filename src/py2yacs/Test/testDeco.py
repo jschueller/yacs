@@ -23,9 +23,9 @@ import tempfile
 import os
 import subprocess
 
-import SALOMERuntime
-import loader
-import pilot
+from salome.yacs import SALOMERuntime
+from salome.yacs import loader
+from salome.yacs import pilot
 from salome.kernel import salome
 from salome.kernel.LifeCycleCORBA import ResourceParameters
 
