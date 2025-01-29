@@ -130,14 +130,14 @@ class TestDeco(unittest.TestCase):
       Using specific containers.
       This test needs at least 4 cores declared in the catalog of resources.
       """
-      import yacsdecorator
+      from salome.yacs import yacsdecorator
       cm = yacsdecorator.ContainerManager()
       cm.addContainer("c1", 1, False)
       cm.addContainer("c2", 4, True)
       cm.addContainer(yacsdecorator.ContainerManager.defaultContainerName, 1, False)
       cont_file = os.path.join(dir_test, "containers_t4.json")
       cm.saveFile(cont_file)
-      script = """import yacsdecorator
+      script = """from salome.yacs import yacsdecorator
 @yacsdecorator.leaf("c1")
 def f_c1(x,y):
   s = x + y
