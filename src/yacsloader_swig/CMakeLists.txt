@@ -54,7 +54,6 @@ ADD_DEFINITIONS(
 # libraries to link to
 SET(_link_LIBRARIES
   YACSloader
-  ${PYTHON_LIBRARIES}
   ${OMNIORB_LIBRARIES}
   )
 

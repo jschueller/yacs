@@ -52,7 +52,6 @@ ADD_DEFINITIONS(
 # libraries to link to
 SET(_link_LIBRARIES
   YACS
-  ${PYTHON_LIBRARIES}
   )
 
 # --- sources ---
