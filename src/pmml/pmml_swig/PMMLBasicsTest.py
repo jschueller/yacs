@@ -20,7 +20,7 @@
 #
 
 # imports Salomé
-from PMML import PMMLlib, kANN, kLR
+from salome.yacs.PMML import PMMLlib, kANN, kLR
 
 # imports python
 import unittest

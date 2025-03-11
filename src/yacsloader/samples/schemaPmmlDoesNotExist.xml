@@ -283,7 +283,7 @@ refOutputs = [
    <inline name="PyLoadPMML0">
       <script><code><![CDATA[ 
 import sys;
-from PMML import *;
+from salome.yacs.PMML import *;
 pmmlObj = PMMLlib( filename );   
 pmmlObj.SetCurrentModel( modelname , eval(pmmltype) );
 myFunc = "pyFunc";

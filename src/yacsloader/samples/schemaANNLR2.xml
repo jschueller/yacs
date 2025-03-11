@@ -93,7 +93,7 @@ print("+++ OK " , i , " +++", ret)
    <inline name="PyLoadPMML_LR">
       <script><code><![CDATA[ 
 import sys;
-from PMML import *;
+from salome.yacs.PMML import *;
 pmmlObj = PMMLlib( filename );   
 pmmlObj.SetCurrentModel( modelname , eval(pmmltype) );
 myFunc = "pyFunc";
@@ -109,7 +109,7 @@ exec(myCode);
    <inline name="PyLoadPMML_ANN">
       <script><code><![CDATA[ 
 import sys;
-from PMML import *;
+from salome.yacs.PMML import *;
 pmmlObj = PMMLlib( filename );   
 pmmlObj.SetCurrentModel( modelname , eval(pmmltype) );
 myFunc = "pyFunc";

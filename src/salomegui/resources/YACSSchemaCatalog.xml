@@ -25,7 +25,7 @@ id_cyl_Int = geompy.addToStudy(box,"Box_%d" % n)]]></code></script>
    <inline name="PyLoadPMML">
       <script><code><![CDATA[ 
 import sys;
-from PMML import *;
+from salome.yacs.PMML import *;
 pmmlObj = PMMLlib( filename );   
 pmmlObj.SetCurrentModel( modelname , eval(pmmltype) );
 myFunc = "pyFunc";
