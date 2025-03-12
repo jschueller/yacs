@@ -99,8 +99,8 @@ ENGINE::Proc* YACSLoader::load(const char * file)
   FILE* fin=fopen(file,"r");
   if (! fin)
   {
-    std::cerr << "Couldn't open schema file" << std::endl;
-    throw std::invalid_argument("Couldn't open schema file");
+    std::cerr << "Couldn't open schema file: " << std::string(file)<<std::endl;
+    throw std::invalid_argument(std::string("Couldn't open schema file: ") + std::string(file));
   }
 
   saxContext = xmlCreateFileParserCtxt(file);
