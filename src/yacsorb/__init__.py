@@ -23,8 +23,8 @@ __version__ = "@SALOMEYACS_GIT_SHA1@"
 # ==========================================================================
 # the wheel should not require any environment variables to be set
 
-# set KERNEL_ROOT_DIR to the root dir of the salome.yacs module, where we copied the /share directory
-os.environ.setdefault("YACES_ROOT_DIR", os.path.dirname(os.path.dirname(__file__)))
+# set YACS_ROOT_DIR to the root dir of the salome.yacs module, where we copied the /share directory
+os.environ.setdefault("YACS_ROOT_DIR", os.path.dirname(os.path.dirname(__file__)))
 
 # same for PATH, we copied the /bin directory to the root dir of salome.yacs
 os.environ["PATH"] += ":" + os.path.join(os.path.dirname(os.path.dirname(__file__)), "bin", "salome")
